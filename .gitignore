@@ -1,0 +1,7 @@
+.flatpak-builder/
+darktable/
+repo/
+darktable.flatpak
+darktable.flatpak.sig
+darktable.flatpakref
+Makefile.config
