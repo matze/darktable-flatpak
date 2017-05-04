@@ -31,7 +31,6 @@
         "/bin/pathtest",
         "/lib/cmake",
         "/lib/pkgconfig",
-        "/lib64/cmake",
         "/man",
         "*.a",
         "*.la"
@@ -43,6 +42,16 @@
             "config-opts": [
                 "-DCMAKE_INSTALL_LIBDIR=/app/lib"
             ],
+            "build-options": {
+                "arch": {
+                    "aarch64": {
+                        "config-opts": [
+                            "-DBUILD_FOR_SSE=0",
+                            "-DBUILD_FOR_SSE2=0"
+                        ]
+                    }
+                }
+            },
             "sources": [
                 {
                     "type": "archive",
@@ -81,7 +90,8 @@
             "name": "darktable",
             "cmake": true,
             "config-opts": [
-                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+                "-DBINARY_PACKAGE_BUILD=1"
             ],
             "builddir": true,
             "build-options": {
@@ -90,8 +100,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/darktable-org/darktable/releases/download/release-2.2.3/darktable-2.2.3.tar.xz",
-                    "sha256": "1b33859585bf283577680c61e3c0ea4e48214371453b9c17a86664d2fbda48a0"
+                    "url": "https://github.com/darktable-org/darktable/releases/download/release-2.2.4/darktable-2.2.4.tar.xz",
+                    "sha256": "bd5445d6b81fc3288fb07362870e24bb0b5378cacad2c6e6602e32de676bf9d8"
                 }
             ]
         }
